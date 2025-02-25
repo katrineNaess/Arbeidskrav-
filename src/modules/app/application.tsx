@@ -100,8 +100,8 @@ export function Application() {
     const hoverPointStyle = new Style({
       image: new CircleStyle({
         radius: 8, // Større sirkel ved hover
-        fill: new Fill({ color: 'red' }),
-        stroke: new Stroke({ color: 'black', width: 2 }),
+        fill: new Fill({ color: 'rgb(241,87,22)' }),
+        stroke: new Stroke({ color: 'white', width: 2 }),
       }),
     })
 
@@ -116,7 +116,7 @@ export function Application() {
       format: new GeoJSON(),
     })
 
-    // **3️⃣ Opprett lag**
+    // Opprett lag
     const SivilforsvarsdistrikterLayer = new VectorLayer({
       source: SivilforsvarsdistrikterSource,
       style: defaultPolygonStyle,
@@ -127,7 +127,7 @@ export function Application() {
       style: defaultPointStyle,
     })
 
-    // **4️⃣ Opprett kartet**
+    // Opprett kartet
     const map = new Map({
       target: mapRef.current!,
       view: new View({ center: [10.8, 59.9], zoom: 6 }),
@@ -138,7 +138,7 @@ export function Application() {
       ],
     })
 
-    // **5️⃣ Legg til hover-effekt**
+    // Legg til hover-effekt
     map.on('pointermove', (event) => {
       let hoveredFeature = map.forEachFeatureAtPixel(
         event.pixel,
