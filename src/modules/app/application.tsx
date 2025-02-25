@@ -68,7 +68,7 @@ import VectorLayer from 'ol/layer/Vector'
 import VectorSource from 'ol/source/Vector'
 import GeoJSON from 'ol/format/GeoJSON'
 import { useGeographic } from 'ol/proj'
-import { Style, Fill, Stroke, Circle as CircleStyle } from 'ol/style'
+import { Style, Fill, Stroke, Icon } from 'ol/style'
 
 import 'ol/ol.css'
 
@@ -80,28 +80,29 @@ export function Application() {
   useEffect(() => {
     // **1️⃣ Definer standard- og hover-stiler**
     const defaultPolygonStyle = new Style({
-      fill: new Fill({ color: 'rgba(0,157,255,0.3)' }), // Rosa farge
+      fill: new Fill({ color: 'rgba(0,157,255,0.3)' }),
       stroke: new Stroke({ color: '#0000FF', width: 2 }),
     })
 
     const hoverPolygonStyle = new Style({
-      fill: new Fill({ color: 'rgba(0,111,255,0.5)' }), // Gul hover-effekt
+      fill: new Fill({ color: 'rgba(0,111,255,0.5)' }),
       stroke: new Stroke({ color: '#00bbff', width: 3 }),
     })
 
+    // ✨ Bruker Icon i stedet for CircleStyle
     const defaultPointStyle = new Style({
-      image: new CircleStyle({
-        radius: 6,
-        fill: new Fill({ color: 'orange' }),
-        stroke: new Stroke({ color: 'white', width: 2 }),
+      image: new Icon({
+        anchor: [0.5, 1], // Ikonet posisjoneres med spissen nederst
+        src: '/ArbeidskravBase/icons/EmergencyShelter.png', // Path til ikonet
+        scale: 0.15, // Mindre størrelse
       }),
     })
 
     const hoverPointStyle = new Style({
-      image: new CircleStyle({
-        radius: 8, // Større sirkel ved hover
-        fill: new Fill({ color: 'rgb(241,87,22)' }),
-        stroke: new Stroke({ color: 'white', width: 2 }),
+      image: new Icon({
+        anchor: [0.5, 1],
+        src: '/ArbeidskravBase/icons/EmergencyShelter.png',
+        scale: 0.2, // Litt større ved hover
       }),
     })
 
