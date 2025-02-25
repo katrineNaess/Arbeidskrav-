@@ -37,7 +37,7 @@ export function Application() {
       style: new Style({
         image: new CircleStyle({
           radius: 6,
-          fill: new Fill({ color: 'red' }),
+          fill: new Fill({ color: 'orange' }),
           stroke: new Stroke({ color: 'white', width: 2 }),
         }),
       }),
