@@ -23,7 +23,7 @@ export function Application() {
         format: new GeoJSON(),
       }),
       style: new Style({
-        fill: new Fill({ color: 'rgba(0, 0, 255, 0.3)' }),
+        fill: new Fill({ color: 'rgba(255,0,251,0.3)' }),
         stroke: new Stroke({ color: '#0000FF', width: 2 }),
       }),
     })
